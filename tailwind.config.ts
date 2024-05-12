@@ -13,8 +13,22 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+
+      colors: {
+        brandAccent: "#DDF1E6",
+        brandText: "#183835",
+        brandPopup: "#78c51c",
+        brandPrimary: "#2A6F2B",
+      },
+
+      fontFamily: {
+        secondary: "var(--font-secondary)",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
 };
 export default config;
