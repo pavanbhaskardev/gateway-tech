@@ -4,8 +4,10 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Autoplay } from "swiper/modules";
 import { useAnimate } from "framer-motion";
+import Link from "next/link";
 import "swiper/css";
 import "swiper/css/effect-fade";
+import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
   const [scope, animate] = useAnimate();
@@ -40,22 +42,19 @@ export default function HeroSection() {
       <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
         <div className="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-56 lg:pt-48 xl:col-span-6">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h1 className="mt-24 text-6xl font-bold font-secondary sm:mt-10 sm:text-7xl">
+            <h1 className="mt-12 text-6xl font-bold font-secondary sm:mt-10 sm:text-7xl bg-[linear-gradient(110deg,#183835,45%,#78c51c,55%,#183835)] bg-[length:200%_100%] animate-shimmer transition-colors bg-clip-text text-transparent">
               Empowering your online business
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               with the transformative potential of IoT services.
             </p>
-            <div className="mt-10 flex items-center gap-x-6">
-              <a
-                href="#"
-                className="rounded-md bg-brandPrimary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brandPrimary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
+            <div className="my-5 flex items-center gap-x-3">
+              <Button className="bg-brandPrimary hover:bg-brandPrimary/80">
                 Book a Demo
-              </a>
-              <a href="#" className="text-sm font-semibold leading-6 ">
-                Learn more <span aria-hidden="true">→</span>
-              </a>
+              </Button>
+              <Button variant="outline" asChild>
+                <Link href="/#about-section">Learn more</Link>
+              </Button>
             </div>
           </div>
         </div>

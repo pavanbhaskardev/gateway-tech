@@ -19,42 +19,42 @@ const products = [
     name: "Agriculture",
     description:
       "Harnessing technology to increase crop yields, improve sustainability, and optimize supply chains, ensuring food security and supporting rural economies",
-    href: "#",
+    href: "/industries/agriculture",
     icon: GlobeAmericasIcon,
   },
   {
     name: "Manufacturing",
     description:
       "Driving productivity and innovation in energy and automobile sectors through advanced production techniques nd sustainable technologies",
-    href: "#",
+    href: "/industries/manufacturing",
     icon: CubeIcon,
   },
   {
     name: "Healthcare",
     description:
       "Innovating pharmaceuticals medical devices, and biotechnology to improve patient care and advance medical science",
-    href: "#",
+    href: "/industries/healthcare",
     icon: UsersIcon,
   },
   {
     name: "Retail",
     description:
       "Facilitating efficient distribution and management of goods through warehouse, optimizing food and supply chains for seamless delivery to consumers",
-    href: "#",
+    href: "/industries/retail",
     icon: BuildingStorefrontIcon,
   },
   {
     name: "Technology",
     description:
       "Spearheading digital transformation across industries, from software development to hardware manufacturing, to enhance connectivity and streamline processes.",
-    href: "#",
+    href: "/industries/technology",
     icon: CpuChipIcon,
   },
 ];
 
 const pageLinks = [
-  { name: "Features", href: "#feature-section" },
-  { name: "Solutions", href: "#solutions-section" },
+  { name: "Features", href: "/#feature-section" },
+  { name: "Solutions", href: "/#solutions-section" },
   { name: "About Us", href: "#" },
   { name: "Blog", href: "/blog" },
 ];
@@ -84,7 +84,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="z-10 bg-brandAccent relative">
+    <header className="z-20 bg-brandAccent sticky top-0">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -104,9 +104,10 @@ export default function Navbar() {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
+
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover>
-            {({ open }) => (
+            {({ open, close }) => (
               <>
                 <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 ">
                   Industries
@@ -130,8 +131,10 @@ export default function Navbar() {
                   <Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-brandAccent pt-14 shadow-lg ring-1 ring-gray-900/5">
                     <div className="mx-auto grid max-w-7xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
                       {products.map((item) => (
-                        <div
+                        <Link
+                          href={item.href}
                           key={item.name}
+                          onClick={close}
                           className="group relative rounded-lg p-6 text-sm leading-6 transition-colors hover:bg-brandText/10"
                         >
                           <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-brandPrimary">
@@ -150,7 +153,7 @@ export default function Navbar() {
                           <p className="mt-1 text-gray-600">
                             {item.description}
                           </p>
-                        </div>
+                        </Link>
                       ))}
                     </div>
                   </Popover.Panel>
@@ -178,7 +181,7 @@ export default function Navbar() {
             initial="initial"
             animate={mobileMenuOpen ? "animate" : "initial"}
             exit="initial"
-            className="fixed lg:hidden inset-y-0 right-0 z-10 w-full overflow-y-auto bg-brandAccent px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+            className="fixed lg:hidden inset-y-0 right-0 z-10 w-full overflow-y-hidden bg-brandAccent px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
           >
             <div className="flex items-center justify-between">
               <button
@@ -198,7 +201,7 @@ export default function Navbar() {
                     {({ open }) => (
                       <>
                         <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7  hover:bg-brandText/10">
-                          Product
+                          Industries
                           <ChevronDownIcon
                             className={classNames(
                               open ? "rotate-180" : "",
@@ -207,16 +210,17 @@ export default function Navbar() {
                             aria-hidden="true"
                           />
                         </Disclosure.Button>
+
                         <Disclosure.Panel className="mt-2 space-y-2">
                           {[...products].map((item) => (
-                            <Disclosure.Button
+                            <Link
+                              onClick={() => setMobileMenuOpen(false)}
                               key={item.name}
-                              as="a"
                               href={item.href}
                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7  hover:bg-brandText/10"
                             >
                               {item.name}
-                            </Disclosure.Button>
+                            </Link>
                           ))}
                         </Disclosure.Panel>
                       </>

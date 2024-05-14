@@ -27,7 +27,10 @@ const perks = [
 
 export default function AboutSection() {
   return (
-    <div className="bg-white min-h-screen flex flex-col justify-center px-6 pt-24 pb-12 sm:pt-32 sm:pb-16 lg:px-8">
+    <div
+      className="bg-white min-h-screen flex flex-col justify-center px-6 pt-24 pb-12 sm:pt-32 sm:pb-16 lg:px-8"
+      id="about-section"
+    >
       <div className="mx-auto max-w-2xl text-center md:mb-10">
         <h2 className="mt-2 text-4xl font-bold font-secondary tracking-tight sm:text-5xl">
           Why us

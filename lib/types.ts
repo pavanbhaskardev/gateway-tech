@@ -4,3 +4,9 @@ export type MetaDataType = {
   image: string;
   slug: string;
 };
+
+export type IndustryType = {
+  name: string;
+  description: string;
+  banner: string;
+};
