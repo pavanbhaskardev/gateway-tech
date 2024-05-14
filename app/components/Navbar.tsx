@@ -13,6 +13,7 @@ import {
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const products = [
   {
@@ -94,6 +95,7 @@ export default function Navbar() {
             <span className="font-semibold">GATEWAY TECH</span>
           </Link>
         </div>
+
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -105,7 +107,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        <Popover.Group className="hidden lg:flex lg:gap-x-12">
+        <Popover.Group className="hidden lg:flex lg:gap-x-12 lg:items-center">
           <Popover>
             {({ open, close }) => (
               <>
@@ -171,6 +173,10 @@ export default function Navbar() {
               {details.name}
             </Link>
           ))}
+
+          <Button asChild variant="outline">
+            <Link href="/contact">Contact Us</Link>
+          </Button>
         </Popover.Group>
       </nav>
 

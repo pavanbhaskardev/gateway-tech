@@ -1,52 +1,27 @@
-import {
-  LinkIcon,
-  ArrowTrendingUpIcon,
-  BoltIcon,
-  ChartBarIcon,
-  UserGroupIcon,
-} from "@heroicons/react/24/outline";
+import { SVGProps } from "react";
 
-const features = [
-  {
-    name: "Customization and Integration",
-    description:
-      "Tailored solutions seamlessly integrate with existing infrastructure, ensuring smooth workflow integration across industries.",
-    icon: LinkIcon,
-  },
-  {
-    name: "Real-Time Monitoring and Insights",
-    description:
-      "Gain actionable data insights with IoT solutions, providing real-time monitoring for enhanced operational efficiency and informed decision-making.",
-    icon: ArrowTrendingUpIcon,
-  },
-  {
-    name: "Predictive Analytics and Maintenance",
-    description:
-      "Anticipate and prevent potential issues with advanced analytics, saving time and resources through proactive maintenance planning.",
-    icon: ChartBarIcon,
-  },
-  {
-    name: "Enhanced Collaboration and Communication",
-    description:
-      "Facilitate seamless cross-functional collaboration, improving communication and coordination for better outcomes in diverse industries.",
-    icon: UserGroupIcon,
-  },
-  {
-    name: "Continuous Improvement and Innovation",
-    description:
-      "Stay ahead of the curve with ongoing research and development, accessing cutting-edge IoT advancements for sustained competitiveness.",
-    icon: BoltIcon,
-  },
-];
+type FeaturesSectionType = {
+  title?: string;
+  features: {
+    name: string;
+    description: string;
+    icon: React.FC<SVGProps<SVGSVGElement>>;
+  }[];
+};
 
-export default function FeaturesSection() {
+export default function FeaturesSection({
+  title = "",
+  features,
+}: FeaturesSectionType) {
   return (
     <div className="bg-white py-24 sm:py-32" id="feature-section">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="mt-2 text-4xl font-bold font-secondary tracking-tight  sm:text-5xl">
-            Our Approach
-          </p>
+          {title && (
+            <p className="mt-2 text-4xl font-bold font-secondary tracking-tight  sm:text-5xl">
+              Our Approach
+            </p>
+          )}
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">

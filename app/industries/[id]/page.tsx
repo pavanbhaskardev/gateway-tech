@@ -64,7 +64,7 @@ const page = ({ params }: Props) => {
           </div>
         </div>
 
-        <FeaturesSection />
+        <FeaturesSection features={details.features} />
       </>
     );
   }
