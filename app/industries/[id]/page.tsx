@@ -35,12 +35,13 @@ const page = ({ params }: Props) => {
   if (details) {
     return (
       <>
-        <div className="relative overflow-hidden h-[calc(100vh-72px)] flex items-center">
+        <div className="relative overflow-hidden h-[calc(100vh-68px)] flex items-center">
           <Image
             src={details.banner}
             fill
             alt={`${params.id} industry pic`}
             className="absolute -z-10 h-full w-full object-cover"
+            priority
           />
 
           <div className="absolute h-full w-full bg-gradient-to-b from-black/50 via-black/70 to-black/90" />
@@ -64,7 +65,7 @@ const page = ({ params }: Props) => {
           </div>
         </div>
 
-        <FeaturesSection features={details.features} />
+        <FeaturesSection industry={details.name} />
       </>
     );
   }

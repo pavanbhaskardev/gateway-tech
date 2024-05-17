@@ -1,4 +1,5 @@
 import { SVGProps } from "react";
+import Link from "next/link";
 
 type NavigationType = {
   [key: string]: {
@@ -10,21 +11,21 @@ type NavigationType = {
 
 const navigation: NavigationType = {
   solutions: [
-    { name: "Remote operated systems", href: "#" },
-    { name: "AI vision Inspection", href: "#" },
-    { name: "Seamless Data Integration", href: "#" },
-    { name: "Analytics based early prediction", href: "#" },
+    { name: "Remote operated systems", href: "/#solutions-section" },
+    { name: "AI vision Inspection", href: "/#solutions-section" },
+    { name: "Seamless Data Integration", href: "/#solutions-section" },
+    { name: "Analytics based early prediction", href: "/#solutions-section" },
   ],
   industries: [
-    { name: "Agriculture", href: "#" },
-    { name: "Manufacturing", href: "#" },
-    { name: "Healthcare", href: "#" },
-    { name: "Retail", href: "#" },
-    { name: "Technology", href: "#" },
+    { name: "Agriculture", href: "/industries/agriculture" },
+    { name: "Manufacturing", href: "/industries/manufacturing" },
+    { name: "Healthcare", href: "/industries/healthcare" },
+    { name: "Retail", href: "/industries/retail" },
+    { name: "Technology", href: "/industries/technology" },
   ],
   company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
+    { name: "About", href: "/about" },
+    { name: "Blog", href: "/blog" },
   ],
   legal: [
     { name: "Privacy", href: "#" },
@@ -132,12 +133,12 @@ export default function FooterSection() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>
-                      <a
+                      <Link
                         href={item.href}
                         className="text-sm leading-6 text-gray-600 hover:"
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -147,12 +148,13 @@ export default function FooterSection() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.industries.map((item) => (
                     <li key={item.name}>
-                      <a
+                      <Link
+                        scroll
                         href={item.href}
                         className="text-sm leading-6 text-gray-600 hover:"
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -164,12 +166,13 @@ export default function FooterSection() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
-                      <a
+                      <Link
+                        scroll
                         href={item.href}
                         className="text-sm leading-6 text-gray-600 hover:"
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>

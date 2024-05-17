@@ -93,7 +93,10 @@ const IndustriesSection = () => {
             </p>
 
             <Button variant="outline" className="z-10" asChild>
-              <Link href={`industries/${selectedIndustry.name.toLowerCase()}`}>
+              <Link
+                href={`industries/${selectedIndustry.name.toLowerCase()}`}
+                scroll
+              >
                 Read more
               </Link>
             </Button>

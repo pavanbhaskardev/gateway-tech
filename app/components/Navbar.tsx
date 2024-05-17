@@ -56,7 +56,7 @@ const products = [
 const pageLinks = [
   { name: "Features", href: "/#feature-section" },
   { name: "Solutions", href: "/#solutions-section" },
-  { name: "About Us", href: "#" },
+  { name: "About Us", href: "/about" },
   { name: "Blog", href: "/blog" },
 ];
 
@@ -87,7 +87,7 @@ export default function Navbar() {
   return (
     <header className="z-20 bg-brandAccent sticky top-0">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -169,6 +169,7 @@ export default function Navbar() {
               href={details.href}
               className="text-sm font-semibold leading-6"
               key={details.name}
+              scroll
             >
               {details.name}
             </Link>
@@ -180,6 +181,7 @@ export default function Navbar() {
         </Popover.Group>
       </nav>
 
+      {/* mobile navbar */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -223,6 +225,7 @@ export default function Navbar() {
                               onClick={() => setMobileMenuOpen(false)}
                               key={item.name}
                               href={item.href}
+                              scroll
                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7  hover:bg-brandText/10"
                             >
                               {item.name}
@@ -238,6 +241,7 @@ export default function Navbar() {
                       href={details.href}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-brandText/10"
                       key={details.name}
+                      scroll
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {details.name}

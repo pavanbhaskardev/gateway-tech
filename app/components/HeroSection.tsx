@@ -72,7 +72,7 @@ export default function HeroSection() {
       <div className="relative mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
         <div className="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-56 lg:pt-48 xl:col-span-6">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h1 className="mt-12 text-6xl font-bold font-secondary sm:mt-10 sm:text-7xl bg-[linear-gradient(110deg,#183835,45%,#78c51c,55%,#183835)] bg-[length:200%_100%] animate-shimmer transition-colors bg-clip-text text-transparent">
+            <h1 className="mt-12 text-6xl font-bold font-secondary sm:mt-10 sm:text-7xl bg-[linear-gradient(110deg,#183835,45%,#78c51c,55%,#183835)] bg-[length:300%_100%] animate-shimmer transition-colors bg-clip-text text-transparent">
               Empowering your online business
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
