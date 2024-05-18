@@ -255,7 +255,7 @@ export default function FeaturesSection({
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           {title && (
-            <p className="mt-2 text-4xl font-bold font-secondary tracking-tight  sm:text-5xl">
+            <p className="mt-2 text-4xl tracking-tight sm:text-5xl">
               Our Approach
             </p>
           )}
@@ -277,7 +277,7 @@ export default function FeaturesSection({
                 >
                   <dt className="text-base font-semibold leading-7">
                     <div
-                      className={`absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[linear-gradient(110deg,#183835,45%,#78c51c,55%,#183835)] bg-[length:300%_100%] animate-shimmer transition-colors`}
+                      className={`absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-brandText`}
                     >
                       <feature.icon
                         className="h-6 w-6 text-white"

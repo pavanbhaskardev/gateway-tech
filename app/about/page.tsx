@@ -40,10 +40,10 @@ const page = () => {
           <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
             <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
               <div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-                <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl font-secondary bg-[linear-gradient(110deg,#183835,45%,#78c51c,55%,#183835)] bg-[length:300%_100%] animate-shimmer transition-colors bg-clip-text text-transparent">
+                <h1 className="text-5xl leading-[3.5rem!important] sm:mt-10 sm:text-7xl sm:leading-[5rem!important]">
                   About Us
                 </h1>
-                <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+                <p className="relative mt-6 text-xl leading-8 text-gray-600 sm:text-2xl sm:w-[550px]">
                   Our mission is to guide organizations towards sustainable
                   growth, helping them overcome challenges and seize
                   opportunities in todays dynamic business landscape.
@@ -122,7 +122,7 @@ const page = () => {
           <div className="mx-auto flex flex-col max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:flex-row">
             <div className="lg:pr-8 lg:pt-4 flex-shrink-0">
               <div className="lg:max-w-lg">
-                <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl font-secondary">
+                <p className="mt-2 text-3xl tracking-tight text-gray-900 sm:text-4xl ">
                   Our Vision
                 </p>
                 <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -151,7 +151,7 @@ const page = () => {
           <div className="mx-auto flex flex-col max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:flex-row-reverse">
             <div className="lg:pr-8 lg:pt-4 flex-shrink-0">
               <div className="lg:max-w-lg">
-                <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl font-secondary">
+                <p className="mt-2 text-3xl tracking-tight text-gray-900 sm:text-4xl ">
                   Our Mission
                 </p>
                 <p className="mt-6 text-lg leading-8 text-gray-600">

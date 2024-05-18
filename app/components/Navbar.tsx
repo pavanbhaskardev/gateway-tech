@@ -85,14 +85,14 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="z-20 bg-brandAccent sticky top-0">
+    <header className="z-20 bg-brandAccent  sticky top-0 ">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
         aria-label="Global"
       >
-        <div className="flex lg:flex-1">
+        <div className="flex">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="font-semibold">GATEWAY TECH</span>
+            <span className="font-semibold sm:text-lg">GATEWAY TECH</span>
           </Link>
         </div>
 
@@ -111,7 +111,7 @@ export default function Navbar() {
           <Popover>
             {({ open, close }) => (
               <>
-                <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 ">
+                <Popover.Button className="flex items-center gap-x-1 text-base leading-6 ">
                   Industries
                   <ChevronDownIcon
                     className={`h-5 w-5 flex-none text-gray-400 transition-transform ${
@@ -147,12 +147,12 @@ export default function Navbar() {
                           </div>
                           <Link
                             href={item.href}
-                            className="mt-6 block font-semibold "
+                            className="mt-6 block font-semibold text-lg"
                           >
                             {item.name}
                             <span className="absolute inset-0" />
                           </Link>
-                          <p className="mt-1 text-gray-600">
+                          <p className="mt-1 text-gray-600 text-base text-balance">
                             {item.description}
                           </p>
                         </Link>
@@ -167,18 +167,22 @@ export default function Navbar() {
           {pageLinks.map((details) => (
             <Link
               href={details.href}
-              className="text-sm font-semibold leading-6"
+              className="text-base leading-6"
               key={details.name}
               scroll
             >
               {details.name}
             </Link>
           ))}
-
-          <Button asChild variant="outline">
-            <Link href="/contact">Contact Us</Link>
-          </Button>
         </Popover.Group>
+
+        <Button
+          asChild
+          className="bg-brandPrimary hover:bg-brandPrimary/80 hidden lg:flex"
+          size="lg"
+        >
+          <Link href="/contact">Book a Demo</Link>
+        </Button>
       </nav>
 
       {/* mobile navbar */}
@@ -189,7 +193,7 @@ export default function Navbar() {
             initial="initial"
             animate={mobileMenuOpen ? "animate" : "initial"}
             exit="initial"
-            className="fixed lg:hidden inset-y-0 right-0 z-10 w-full overflow-y-hidden bg-brandAccent px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+            className="fixed lg:hidden top-0 right-0 z-10 w-full h-full overflow-y-hidden bg-brandAccent px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
           >
             <div className="flex items-center justify-between">
               <button
@@ -208,7 +212,7 @@ export default function Navbar() {
                   <Disclosure as="div" className="-mx-3">
                     {({ open }) => (
                       <>
-                        <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7  hover:bg-brandText/10">
+                        <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base leading-7  hover:bg-brandText/10">
                           Industries
                           <ChevronDownIcon
                             className={classNames(
@@ -226,7 +230,7 @@ export default function Navbar() {
                               key={item.name}
                               href={item.href}
                               scroll
-                              className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7  hover:bg-brandText/10"
+                              className="block rounded-lg py-2 pl-6 pr-3 text-sm leading-7  hover:bg-brandText/10"
                             >
                               {item.name}
                             </Link>
@@ -239,7 +243,7 @@ export default function Navbar() {
                   {pageLinks.map((details) => (
                     <Link
                       href={details.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-brandText/10"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7  hover:bg-brandText/10"
                       key={details.name}
                       scroll
                       onClick={() => setMobileMenuOpen(false)}

@@ -1,16 +1,32 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Autoplay } from "swiper/modules";
-import { useAnimate } from "framer-motion";
+import { useAnimate, motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import { Button } from "@/components/ui/button";
 
+const variants = {
+  initial: {
+    y: 100,
+  },
+  animate: {
+    y: 0,
+  },
+  exit: {
+    y: -100,
+  },
+};
+
+const text = ["agriculture", "retail", "manufacturing", "healthcare"];
+
 export default function HeroSection() {
   const [scope, animate] = useAnimate();
+  const [activeText, setActiveText] = useState(1);
+
   useEffect(() => {
     animate(
       "#arc1-1",
@@ -36,6 +52,23 @@ export default function HeroSection() {
       { duration: 2.5, ease: "linear", repeat: Infinity, repeatDelay: 0.5 }
     );
   }, [animate]);
+
+  // incrementing and decrementing count to show different text
+  const toggleText = () => {
+    setActiveText((current) => {
+      if (current === 4) {
+        return 1;
+      }
+      return (current += 1);
+    });
+  };
+
+  useEffect(() => {
+    const interval = setInterval(toggleText, 2650);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
   return (
     <div className="relative bg-white" ref={scope}>
@@ -69,23 +102,44 @@ export default function HeroSection() {
         />
       </svg>
 
-      <div className="relative mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
-        <div className="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-56 lg:pt-48 xl:col-span-6">
+      <div className="relative mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8 pb-24">
+        <div className="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-56 lg:pt-28 xl:col-span-6">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h1 className="mt-12 text-6xl font-bold font-secondary sm:mt-10 sm:text-7xl bg-[linear-gradient(110deg,#183835,45%,#78c51c,55%,#183835)] bg-[length:300%_100%] animate-shimmer transition-colors bg-clip-text text-transparent">
-              Empowering your online business
+            <h1 className="mt-12 text-5xl leading-[3.5rem!important] sm:mt-10 sm:text-7xl sm:leading-[5rem!important] flex flex-wrap gap-x-4">
+              Empower your{" "}
+              <AnimatePresence mode="popLayout">
+                <span className="inline-block overflow-hidden">
+                  <motion.span
+                    variants={variants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    className="inline-block"
+                    transition={{
+                      duration: 0.5,
+                      ease: [0.33, 1, 0.68, 1],
+                    }}
+                    key={activeText}
+                  >
+                    {text[activeText - 1]}
+                  </motion.span>
+                </span>
+              </AnimatePresence>
+              business
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-6 text-xl leading-8 text-gray-600 sm:text-2xl sm:w-[375px]">
               with the transformative potential of IoT services.
             </p>
-            <div className="my-5 flex items-center gap-x-3">
+
+            <div className="my-6 flex items-center gap-x-3 sm:my-8">
               <Button
                 className="bg-brandPrimary hover:bg-brandPrimary/80"
+                size="lg"
                 asChild
               >
                 <Link href="/contact">Book a Demo</Link>
               </Button>
-              <Button variant="outline" asChild>
+              <Button variant="outline" asChild size="lg">
                 <Link href="/#about-section">Learn more</Link>
               </Button>
             </div>

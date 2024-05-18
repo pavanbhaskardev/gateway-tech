@@ -98,7 +98,10 @@ const navigation: NavigationType = {
 
 export default function FooterSection() {
   return (
-    <footer className="bg-white" aria-labelledby="footer-heading">
+    <footer
+      className="text-white bg-brandText"
+      aria-labelledby="footer-heading"
+    >
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -108,7 +111,7 @@ export default function FooterSection() {
             <a href="#" className="-m-1.5 p-1.5">
               <span className="font-semibold">GATEWAY TECH</span>
             </a>
-            <p className="text-sm leading-6 text-gray-600">
+            <p className="text-sm leading-6 text-gray-300">
               Predict with Confidence.
             </p>
             <div className="flex space-x-6">
@@ -116,7 +119,7 @@ export default function FooterSection() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-400 hover:text-gray-500"
+                  className="text-gray-300 hover:text-gray-400"
                 >
                   <span className="sr-only">{item.name}</span>
                   {item.icon && (
@@ -135,7 +138,7 @@ export default function FooterSection() {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-sm leading-6 text-gray-600 hover:"
+                        className="text-sm leading-6 text-gray-300"
                       >
                         {item.name}
                       </Link>
@@ -151,7 +154,7 @@ export default function FooterSection() {
                       <Link
                         scroll
                         href={item.href}
-                        className="text-sm leading-6 text-gray-600 hover:"
+                        className="text-sm leading-6 text-gray-300"
                       >
                         {item.name}
                       </Link>
@@ -169,7 +172,7 @@ export default function FooterSection() {
                       <Link
                         scroll
                         href={item.href}
-                        className="text-sm leading-6 text-gray-600 hover:"
+                        className="text-sm leading-6 text-gray-300"
                       >
                         {item.name}
                       </Link>
@@ -184,7 +187,7 @@ export default function FooterSection() {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-sm leading-6 text-gray-600 hover:"
+                        className="text-sm leading-6 text-gray-300"
                       >
                         {item.name}
                       </a>
@@ -195,8 +198,8 @@ export default function FooterSection() {
             </div>
           </div>
         </div>
-        <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
-          <p className="text-xs leading-5 text-gray-500">
+        <div className="mt-16 border-t border-gray-300/10 pt-8 sm:mt-20 lg:mt-24">
+          <p className="text-xs leading-5 text-gray-300">
             &copy; {new Date().getFullYear()} GATEWAY TECH, All rights reserved.
           </p>
         </div>

@@ -81,9 +81,6 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         shimmer: "shimmer 5s linear infinite",
       },
-      fontFamily: {
-        secondary: "var(--font-secondary)",
-      },
     },
   },
   plugins: [

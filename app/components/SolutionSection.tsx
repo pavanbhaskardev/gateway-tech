@@ -30,10 +30,10 @@ const features = [
 
 const SolutionSection = () => {
   return (
-    <div className="bg-white py-24 sm:py-32" id="solutions-section">
+    <div className="bg-brandAccent py-24 sm:py-32" id="solutions-section">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="mt-2 text-4xl font-bold font-secondary tracking-tight sm:text-5xl">
+          <h2 className="mt-2 text-4xl tracking-tight sm:text-5xl">
             Solutions
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -45,14 +45,14 @@ const SolutionSection = () => {
         </div>
       </div>
 
-      <div className="bg-white">
+      <div>
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           <h2 className="sr-only">Products</h2>
 
           <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             {features.map((feature) => (
               <div key={feature.name} className="group relative">
-                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-12 xl:aspect-w-10">
+                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-12 xl:aspect-w-9">
                   <Image
                     src={feature.imageSrc}
                     alt={feature.description}

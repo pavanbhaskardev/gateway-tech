@@ -52,7 +52,7 @@ const page = ({ params }: Props) => {
                 Gateway Tech involved for revolutionizing 
               </p>
 
-              <h1 className="text-4xl font-bold tracking-tight sm:text-6xl font-secondary capitalize text-white">
+              <h1 className="text-4xl tracking-tight sm:text-6xl  capitalize text-white">
                 {params.id}
               </h1>
 

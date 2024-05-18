@@ -35,7 +35,7 @@ const page = async ({ params }: { params: { id: string } }) => {
   const { content } = await getBlogIdDetails(params.id);
 
   return (
-    <article className="px-6 lg:px-8 prose md:prose-lg max-w-2xl mx-auto mt-10 prose-h1:font-secondary prose-img:rounded-lg">
+    <article className="px-6 lg:px-8 pb-20 sm:pb-24 prose md:prose-lg max-w-2xl mx-auto mt-10 prose-h1:font-normal prose-img:rounded-lg">
       {content}
     </article>
   );
