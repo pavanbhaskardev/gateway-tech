@@ -105,7 +105,7 @@ export default function HeroSection() {
       <div className="relative mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8 pb-24 lg:pb-0">
         <div className="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0  lg:pt-28 xl:col-span-6">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h1 className="mt-12 text-5xl leading-[3.5rem!important] sm:mt-10 sm:text-7xl sm:leading-[5rem!important] flex flex-wrap gap-x-4">
+            <h1 className="mt-12 text-4xl leading-[3.5rem!important] sm:mt-10 sm:text-7xl sm:leading-[5rem!important] flex flex-wrap gap-x-4">
               Empower your{" "}
               <AnimatePresence mode="wait">
                 <span className="inline-block overflow-hidden">

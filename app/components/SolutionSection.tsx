@@ -33,7 +33,7 @@ const SolutionSection = () => {
     <div className="bg-brandAccent py-24 sm:py-32" id="solutions-section">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="mt-2 text-4xl tracking-tight sm:text-5xl">
+          <h2 className="mt-2 text-4xl tracking-tight sm:text-5xl text-center">
             Solutions
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">

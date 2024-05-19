@@ -43,7 +43,7 @@ const listVariants = {
     opacity: 1,
     transition: {
       ease: [0.33, 1, 0.68, 1],
-      staggerChildren: 0.09,
+      staggerChildren: 0.2,
       duration: 1.25,
     },
   },
