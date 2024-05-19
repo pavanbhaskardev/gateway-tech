@@ -85,14 +85,14 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="z-20 bg-brandAccent  sticky top-0 ">
+    <header className="z-20 bg-brandAccent shadow-sm sticky top-0 ">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
         aria-label="Global"
       >
         <div className="flex">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="font-semibold sm:text-lg">GATEWAY TECH</span>
+            <span className="font-semibold sm:text-lg">Gateway Tech</span>
           </Link>
         </div>
 
@@ -178,7 +178,7 @@ export default function Navbar() {
 
         <Button
           asChild
-          className="bg-brandPrimary hover:bg-brandPrimary/80 hidden lg:flex"
+          className="bg-brandPrimary hover:bg-brandPrimary/80 hidden lg:flex rounded-full"
           size="lg"
         >
           <Link href="/contact">Book a Demo</Link>

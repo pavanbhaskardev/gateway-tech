@@ -83,16 +83,21 @@ const IndustriesSection = () => {
 
         <div className="absolute h-full w-full bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
 
-        <div className="mx-auto max-w-2xl lg:text-center flex items-center flex-col justify-center h-full space-y-4">
-          <p className="mt-2 text-2xl text-white tracking-tight sm:text-4xl z-10">
+        <div className="mx-auto max-w-2xl lg:text-center flex items-center flex-col justify-center h-full space-y-4 sm:space-y-12">
+          <p className="mt-2 text-4xl uppercase text-white tracking-tight sm:text-7xl z-10 lg:text-9xl">
             {selectedIndustry?.name}
           </p>
 
-          <p className="text-sm text-balance leading-6 text-gray-300 z-10 w-[90%] mx-auto text-center sm:text-base sm:leading-7">
+          <p className="text-xl text-balance leading-6 text-gray-300 z-10 w-[90%] mx-auto text-center sm:text-2xl sm:w-full">
             {selectedIndustry?.description}
           </p>
 
-          <Button variant="outline" className="z-10" asChild>
+          <Button
+            variant="outline"
+            size="lg"
+            className="z-10 rounded-full"
+            asChild
+          >
             <Link
               href={`industries/${selectedIndustry.name.toLowerCase()}`}
               scroll

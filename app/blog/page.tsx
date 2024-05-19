@@ -1,6 +1,11 @@
 import { getAllBlogDetails } from "@/lib/mdx";
 import { MetaDataType } from "@/lib/types";
 import BlogCard from "../components/BlogCard";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog - Gateway Tech",
+};
 
 const Blogs = async () => {
   const blogMeta = (await getAllBlogDetails()) as unknown as MetaDataType[];

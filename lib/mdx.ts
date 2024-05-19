@@ -8,14 +8,18 @@ const rootDirectory = path.join(process.cwd(), "app", "content");
 export const getBlogIdDetails = async (id: string) => {
   const slug = id.replace(/\.md(x)?$/, "");
   const filePath = path.join(rootDirectory, `${slug}.mdx`);
-  const fileContent = fs.readFileSync(filePath, "utf8");
+  try {
+    const fileContent = fs.readFileSync(filePath, "utf8");
 
-  const { content, frontmatter } = await compileMDX({
-    source: fileContent,
-    options: { parseFrontmatter: true },
-  });
+    const { content, frontmatter } = await compileMDX({
+      source: fileContent,
+      options: { parseFrontmatter: true },
+    });
 
-  return { meta: { ...frontmatter, slug }, content };
+    return { meta: { ...frontmatter, slug }, content };
+  } catch (error) {
+    return {};
+  }
 };
 
 export const getAllBlogDetails = async () => {

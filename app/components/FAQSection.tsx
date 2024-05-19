@@ -4,11 +4,20 @@ import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
 
 const faqs = [
   {
-    question: "What's the best thing about Switzerland?",
+    question: "What industries does Gateway Tech serve?",
     answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      "We serve a wide range of industries, including agriculture, manufacturing, healthcare, online retail (or e-commerce), and more. We offer customized solutions tailored to the specific needs of each industry.",
   },
-  // More questions...
+  {
+    question: "What are the benefits of using Gateway Tech's solutions?",
+    answer:
+      "Benefits include increased efficiency, improved data-driven decision making, reduced costs, enhanced customer experiences, and better resource management.",
+  },
+  {
+    question: "What kind of IoT solutions does Gateway Tech offer?",
+    answer:
+      "We offer a comprehensive suite of IoT solutions, including sensors, data collection and analysis platforms, connectivity options, and integration services. We can help you design, implement, and manage your entire IoT ecosystem.",
+  },
 ];
 
 export default function FAQSection() {

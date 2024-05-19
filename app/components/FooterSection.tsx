@@ -109,7 +109,7 @@ export default function FooterSection() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="font-semibold">GATEWAY TECH</span>
+              <span className="font-semibold">Gateway Tech</span>
             </a>
             <p className="text-sm leading-6 text-gray-300">
               Predict with Confidence.
@@ -200,7 +200,7 @@ export default function FooterSection() {
         </div>
         <div className="mt-16 border-t border-gray-300/10 pt-8 sm:mt-20 lg:mt-24">
           <p className="text-xs leading-5 text-gray-300">
-            &copy; {new Date().getFullYear()} GATEWAY TECH, All rights reserved.
+            &copy; {new Date().getFullYear()} Gateway Tech, All rights reserved.
           </p>
         </div>
       </div>

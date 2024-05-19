@@ -17,11 +17,11 @@ const variants = {
     y: 0,
   },
   exit: {
-    y: -100,
+    y: 100,
   },
 };
 
-const text = ["agriculture", "retail", "manufacturing", "healthcare"];
+const text = ["agriculture", "e-commerce", "manufacturing", "healthcare"];
 
 export default function HeroSection() {
   const [scope, animate] = useAnimate();
@@ -102,12 +102,12 @@ export default function HeroSection() {
         />
       </svg>
 
-      <div className="relative mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8 pb-24">
-        <div className="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-56 lg:pt-28 xl:col-span-6">
+      <div className="relative mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8 pb-24 lg:pb-0">
+        <div className="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0  lg:pt-28 xl:col-span-6">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h1 className="mt-12 text-5xl leading-[3.5rem!important] sm:mt-10 sm:text-7xl sm:leading-[5rem!important] flex flex-wrap gap-x-4">
               Empower your{" "}
-              <AnimatePresence mode="popLayout">
+              <AnimatePresence mode="wait">
                 <span className="inline-block overflow-hidden">
                   <motion.span
                     variants={variants}
@@ -133,13 +133,18 @@ export default function HeroSection() {
 
             <div className="my-6 flex items-center gap-x-3 sm:my-8">
               <Button
-                className="bg-brandPrimary hover:bg-brandPrimary/80"
+                className="bg-brandPrimary hover:bg-brandPrimary/80 rounded-full"
                 size="lg"
                 asChild
               >
                 <Link href="/contact">Book a Demo</Link>
               </Button>
-              <Button variant="outline" asChild size="lg">
+              <Button
+                variant="outline"
+                asChild
+                size="lg"
+                className="rounded-full"
+              >
                 <Link href="/#about-section">Learn more</Link>
               </Button>
             </div>
