@@ -193,7 +193,7 @@ export default function Navbar() {
             initial="initial"
             animate={mobileMenuOpen ? "animate" : "initial"}
             exit="initial"
-            className="fixed lg:hidden top-0 right-0 z-10 w-full h-full overflow-y-hidden bg-brandAccent px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+            className="fixed lg:hidden top-0 right-0 z-20 w-screen h-screen overflow-y-hidden bg-brandAccent px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
           >
             <div className="flex items-center justify-between">
               <button
@@ -216,8 +216,8 @@ export default function Navbar() {
                           Industries
                           <ChevronDownIcon
                             className={classNames(
-                              open ? "rotate-180" : "",
-                              "h-5 w-5 flex-none"
+                              open ? "rotate-180 transform" : "",
+                              "h-5 w-5 flex-none transition-transform"
                             )}
                             aria-hidden="true"
                           />

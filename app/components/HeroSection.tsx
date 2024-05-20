@@ -17,7 +17,7 @@ const variants = {
     y: 0,
   },
   exit: {
-    y: 100,
+    y: -100,
   },
 };
 
@@ -71,7 +71,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className="relative bg-white" ref={scope}>
+    <div className="relative bg-white overflow-hidden" ref={scope}>
       <svg
         className="absolute inset-0 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
         aria-hidden="true"
@@ -107,8 +107,8 @@ export default function HeroSection() {
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h1 className="mt-12 text-4xl leading-[3.5rem!important] sm:mt-10 sm:text-7xl sm:leading-[5rem!important] flex flex-wrap gap-x-4">
               Empower your{" "}
-              <AnimatePresence mode="wait">
-                <span className="inline-block overflow-hidden">
+              <span className="inline-block overflow-hidden">
+                <AnimatePresence mode="wait">
                   <motion.span
                     variants={variants}
                     initial="initial"
@@ -116,15 +116,15 @@ export default function HeroSection() {
                     exit="exit"
                     className="inline-block"
                     transition={{
-                      duration: 0.5,
+                      duration: 0.35,
                       ease: [0.33, 1, 0.68, 1],
                     }}
                     key={activeText}
                   >
                     {text[activeText - 1]}
                   </motion.span>
-                </span>
-              </AnimatePresence>
+                </AnimatePresence>
+              </span>
               business
             </h1>
             <p className="mt-6 text-xl leading-8 text-gray-600 sm:text-2xl sm:w-[375px]">
